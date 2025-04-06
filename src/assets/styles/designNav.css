@@ -1,0 +1,26 @@
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 50px;
+  }
+  
+ li {
+    display: inline-block; /* Los elementos se alinean horizontalmente */
+    margin-right: 90px;
+  }
+  
+  /* nav Link {
+    text-decoration: none;
+    font-size: 20px;
+    color: #e00f0f;
+  } */
+
+  .colorLink{
+    font-size: 20px;
+    color: #e00f0f;
+  }
+  
+  nav .colorLink:hover {
+    color: yellow;
+
+  }
