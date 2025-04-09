@@ -3,8 +3,8 @@ import Navegacion from './Navegacion'
 const Registro = () => {
   return (
     <>
-    <div>Registro</div>
-    <Navegacion/>
+      <div>Registro</div>
+      <Navegacion />
     </>
   )
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navegacion from './Navegacion'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+const API = import.meta.env.VITE_API_URL;
 
 const Login = () => {
   console.log('useNavigate:', useNavigate); //
@@ -27,7 +27,7 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       const { data } = await axios.post(
-        'http://localhost:3000/usuarios/login/iniciar',
+        `${API}/usuarios/login/iniciar`,
         { username, password }, // Enviamos un objeto con username y password
         { headers: { 'Content-Type': 'application/json' } }     //se va enviar en formato json
       );
