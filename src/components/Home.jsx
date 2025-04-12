@@ -1,5 +1,5 @@
 import React from 'react'
-import Navegacion from './Navegacion'
+import Navegacion from './Headers/Navegacion'
 const Home = () => {
     return (
         <>

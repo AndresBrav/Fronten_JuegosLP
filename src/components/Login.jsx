@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import Navegacion from './Navegacion'
+import Navegacion from './Headers/Navegacion'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 const API = import.meta.env.VITE_API_URL;
 
 const Login = () => {
-  console.log('useNavigate:', useNavigate); //
+  // console.log('useNavigate:', useNavigate);
   // Un useState para username
   const [username, setUsername] = useState('');
   // Un useState para password
