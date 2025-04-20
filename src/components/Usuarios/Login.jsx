@@ -1,7 +1,8 @@
 // Login.jsx
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { TokenContext } from '../Contextos/TokenContext';
 
 const API = import.meta.env.VITE_API_URL;
 
@@ -10,8 +11,8 @@ const Login = () => {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
-  const [token, setToken] = useState('')
-  // const { token, setToken } = useToken(); // Obtén el token del contexto
+  // const [token, setToken] = useState('')
+  const { claveAcceso, setClaveAcceso } = useContext(TokenContext);
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -28,7 +29,8 @@ const Login = () => {
         { username, password },
         { headers: { 'Content-Type': 'application/json' } }
       );
-      setToken(data.token); // Almacena el token en el contexto
+      // setToken(data.token); // Almacena el token en el contexto
+      setClaveAcceso(data.token)
       console.log(data.token)
       setMessage('Token almacenado correctamente');
     } catch (error) {
@@ -37,14 +39,15 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (token) { // Usa el token del contexto
-      navigate('/inicioPerfil', { state: { token:token } });
+    if (claveAcceso) { // Usa el token del contexto
+      navigate('/inicioPerfil');
     }
-  }, [token,navigate]);
+  }, [claveAcceso,navigate]);
 
   return (
     <>
       <h1>Frontend para Consumo de API con JWT</h1>
+      <h1> la clave de acceso es : {claveAcceso}</h1>
       <div>
         <h2>Login</h2>
         <input
