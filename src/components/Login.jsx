@@ -1,25 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import Navegacion from './Headers/Navegacion'
+// Login.jsx
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+
 const API = import.meta.env.VITE_API_URL;
 
 const Login = () => {
-  // console.log('useNavigate:', useNavigate);
-  // Un useState para username
   const [username, setUsername] = useState('');
-  // Un useState para password
   const [password, setPassword] = useState('');
-  const [token, setToken] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
+  const [token, setToken] = useState('')
+  // const { token, setToken } = useToken(); // Obtén el token del contexto
 
-  // Función para manejar cambios en username
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   };
 
-  // Función para manejar cambios en password
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
@@ -28,26 +25,22 @@ const Login = () => {
     try {
       const { data } = await axios.post(
         `${API}/usuarios/login/iniciar`,
-        { username, password }, // Enviamos un objeto con username y password
-        { headers: { 'Content-Type': 'application/json' } }     //se va enviar en formato json
+        { username, password },
+        { headers: { 'Content-Type': 'application/json' } }
       );
-      // console.log("lo que envio el servidor es "+data);
-      setToken(data.token);
+      setToken(data.token); // Almacena el token en el contexto
       console.log(data.token)
-      // console.log(data.msg)
       setMessage('Token almacenado correctamente');
     } catch (error) {
       setMessage('Error en el login');
     }
   };
 
-
-  // Este efecto se ejecutará cuando cambie el token
   useEffect(() => {
-    if (token) {
-      navigate('/inicioPerfil'); // Cambia '/inicioPerfil' por la ruta a donde quieras redirigir
+    if (token) { // Usa el token del contexto
+      navigate('/inicioPerfil', { state: { token:token } });
     }
-  }, [token, navigate]);
+  }, [token,navigate]);
 
   return (
     <>
@@ -70,6 +63,7 @@ const Login = () => {
         />
         <button onClick={handleLogin}>Login</button>
       </div>
+      {message && <p>{message}</p>}
     </>
   );
 };

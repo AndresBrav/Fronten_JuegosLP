@@ -6,7 +6,7 @@ import Registro from './components/Registro';
 import Home from './components/Home';
 import Navegacion from './components/Headers/Navegacion';
 import InicioJuegos from './components/Juegos/InicioJuegos';
-
+import Inicio from './components/Inicio';
 
 function App() {
   const [formData, setFormData] = useState({ username: '', password: '' });
@@ -105,15 +105,18 @@ function App() {
     // </div>
     <>
       {/* <Navegacion/> */}
-      <BrowserRouter>
-        
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/registro" element={<Registro />} />
-          <Route path="/inicioPerfil" element={<InicioJuegos />} />
-        </Routes>
-      </BrowserRouter>
+      
+        <BrowserRouter>
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/registro" element={<Registro />} />
+            <Route path="/inicioPerfil" element={<InicioJuegos />} />
+            <Route path="/inicio" element={< Inicio/>} />
+          </Routes>
+        </BrowserRouter>
+      
     </>
   );
 }
