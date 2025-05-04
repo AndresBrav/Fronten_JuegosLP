@@ -1,58 +1,53 @@
 body {
     background-color: black;
-}
-
-.flex-container {
+    margin: 0;
+    font-family: sans-serif;
+  }
+  
+  .flex-container {
     display: flex;
-    /* background-color: #D9D9D9; */
+    flex-direction: column;     /* elementos en columna */
+    align-items: center;        /* centra horizontalmente */
+    justify-content: center;    /* centra verticalmente */
+    gap: 2rem;                  /* Espacio de 2rem entre los elementos */
+  
     background-color: rgba(217, 217, 217, 0.5);
-    /* 0.5 = 50% opacidad */
-
-    width: 50vw;
-    height: 80vh;
-    margin: 20vh 25vw;
-    border-radius: 25px;
     background-image: url('https://i.imgur.com/aTer0Gy.png');
-    /* background-size: 600px 550px; Tamaño personalizado */
-    background-size: 70% auto;
-    /* 50% del ancho del contenedor */
-    /* background-size: cover; */
-    /* Que cubra todo el div */
+    background-size: 70% auto;  /* Tamaño del fondo: 70% de ancho y ajustado en alto */
     background-position: center;
-    /* Centrada */
     background-repeat: no-repeat;
-    /* No se repita */
-    position: relative; /* Importante si el hijo usa posición absoluta */
-}
-
-
-
-.flex-input {
-    position: absolute;
-    /* para que sea respecto al padre */
-    display: flex;
-    flex-wrap: wrap;
-    width: 50%;
-    height: 8%;
+  
+    width: 50vw; /* Ancho del contenedor es 50% del ancho de la ventana */
+    height: 80vh;  /* Alto del contenedor es 80% de la altura de la ventana */
+    margin: 20vh auto;  /* Deja un margen de 20vh (20% de la altura) arriba y abajo y centra horizontalmente */
+    border-radius: 25px;
+  }
+  
+  .flex-input {
+    width: 60%; /* Los inputs ocupan el 60% del ancho del contenedor */
+    height: 2.5rem;
+    padding: 0 1rem;
     border-radius: 15px;
+    border: none;   /* Elimina el borde predeterminado */
+    font-size: 1rem;    /* Tamaño de fuente de 1rem */
     background-color: white;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    margin-left: 25%;
-    margin-top: 25%;
-
-}
-
-.flex-button {
-    position: absolute;
-    /* para que sea respecto al padre */
-    display: flex;
-    flex-wrap: wrap;
-    width: 50%;
-    height: 8%;
+  }
+  
+  .flex-button {
+    width: 60%; /* El botón ocupa el 60% del ancho del contenedor */
+    height: 2.5rem;
     border-radius: 15px;
+    border: none;
     background-color: #0D6EFD;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;    /* Cambia el cursor a puntero cuando pasa sobre el botón */
+    font-size: 1rem;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    margin-left: 25%;
-    margin-top: 25%;
-    justify-content: center;
-}
+  }
+  
+  .flex-button:hover {
+    background-color: #0b5ed7;
+  }
+  

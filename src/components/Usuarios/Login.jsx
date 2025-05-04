@@ -45,38 +45,30 @@ const Login = () => {
   }, [claveAcceso, navigate]);
 
   return (
-    
-      <div className='flex-container'>
-        <div >
-          <input
-            className='flex-input'
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={handleUsernameChange}
-            style={{ marginRight: '0.5rem' }}
-          />
-          <br />
-          <br />
-          <br />
-          <br />
-          <input
-            className='flex-input'
-            type="text"
-            placeholder="Password"
-            value={password}
-            onChange={handlePasswordChange}
-            style={{ marginRight: '0.5rem' }}
-          />
-          <br />
-          <br />
-          <br />
-          <br />
-          <button className='flex-button' onClick={handleLogin}> <p>Login</p></button>
-        </div>
-        {/* {message && <p>{message}</p>} */}
-      </div>
-    
+
+    <div className='flex-container'>
+
+      <input
+        className='flex-input'
+        type="text"
+        placeholder="Username"
+        value={username}
+        onChange={handleUsernameChange}
+        style={{ marginRight: '0.5rem' }}
+      />
+      <input
+        className='flex-input'
+        type="text"
+        placeholder="Password"
+        value={password}
+        onChange={handlePasswordChange}
+        style={{ marginRight: '0.5rem' }}
+      />
+      <button className='flex-button' onClick={handleLogin}> <p>Iniciar Sesion</p></button>
+      <button className='flex-button' > <p>Registrarse</p></button>
+      {message && <p>{message}</p>}
+    </div>
+
   );
 };
 
