@@ -42,32 +42,41 @@ const Login = () => {
     if (claveAcceso) { // Usa el token del contexto
       navigate('/inicioPerfil');
     }
-  }, [claveAcceso,navigate]);
+  }, [claveAcceso, navigate]);
 
   return (
-    <>
-      <h1>Frontend para Consumo de API con JWT</h1>
-      <h1> la clave de acceso es : {claveAcceso}</h1>
-      <div>
-        <h2>Login</h2>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={handleUsernameChange}
-          style={{ marginRight: '0.5rem' }}
-        />
-        <input
-          type="text"
-          placeholder="Password"
-          value={password}
-          onChange={handlePasswordChange}
-          style={{ marginRight: '0.5rem' }}
-        />
-        <button onClick={handleLogin}>Login</button>
+    
+      <div className='flex-container'>
+        <div >
+          <input
+            className='flex-input'
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={handleUsernameChange}
+            style={{ marginRight: '0.5rem' }}
+          />
+          <br />
+          <br />
+          <br />
+          <br />
+          <input
+            className='flex-input'
+            type="text"
+            placeholder="Password"
+            value={password}
+            onChange={handlePasswordChange}
+            style={{ marginRight: '0.5rem' }}
+          />
+          <br />
+          <br />
+          <br />
+          <br />
+          <button className='flex-button' onClick={handleLogin}> <p>Login</p></button>
+        </div>
+        {/* {message && <p>{message}</p>} */}
       </div>
-      {message && <p>{message}</p>}
-    </>
+    
   );
 };
 

@@ -1,7 +1,58 @@
-body{
+body {
     background-color: black;
 }
-div{
-    /* background-color: white; */
-    color: red;
+
+.flex-container {
+    display: flex;
+    /* background-color: #D9D9D9; */
+    background-color: rgba(217, 217, 217, 0.5);
+    /* 0.5 = 50% opacidad */
+
+    width: 50vw;
+    height: 80vh;
+    margin: 20vh 25vw;
+    border-radius: 25px;
+    background-image: url('https://i.imgur.com/aTer0Gy.png');
+    /* background-size: 600px 550px; Tamaño personalizado */
+    background-size: 70% auto;
+    /* 50% del ancho del contenedor */
+    /* background-size: cover; */
+    /* Que cubra todo el div */
+    background-position: center;
+    /* Centrada */
+    background-repeat: no-repeat;
+    /* No se repita */
+    position: relative; /* Importante si el hijo usa posición absoluta */
+}
+
+
+
+.flex-input {
+    position: absolute;
+    /* para que sea respecto al padre */
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 8%;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-left: 25%;
+    margin-top: 25%;
+
+}
+
+.flex-button {
+    position: absolute;
+    /* para que sea respecto al padre */
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    height: 8%;
+    border-radius: 15px;
+    background-color: #0D6EFD;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    margin-left: 25%;
+    margin-top: 25%;
+    justify-content: center;
 }
