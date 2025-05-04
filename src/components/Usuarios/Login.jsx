@@ -38,6 +38,10 @@ const Login = () => {
     }
   };
 
+  const handleRegistro = () => {
+    navigate('/registro');
+  }
+
   useEffect(() => {
     if (claveAcceso) { // Usa el token del contexto
       navigate('/inicioPerfil');
@@ -65,7 +69,7 @@ const Login = () => {
         style={{ marginRight: '0.5rem' }}
       />
       <button className='flex-button' onClick={handleLogin}> <p>Iniciar Sesion</p></button>
-      <button className='flex-button' > <p>Registrarse</p></button>
+      <button className='flex-button' onClick={handleRegistro}> <p>Registrarse</p></button>
       {message && <p>{message}</p>}
     </div>
 
