@@ -8,7 +8,7 @@ export function TokenProvider({ children }) {
 
     // Cargar el token desde localStorage al iniciar la app si ya se guardo en el navegador la clave lo recarga
     useEffect(() => {
-        const savedToken = sessionStorage.getItem("token");
+        const savedToken = localStorage.getItem("token");
         if (savedToken) {
             setClaveAcceso(savedToken);
         }
@@ -17,7 +17,7 @@ export function TokenProvider({ children }) {
     // Guardar en localStorage cada vez que cambie el token
     useEffect(() => {
         if (claveAcceso) {
-            sessionStorage.setItem("token", claveAcceso);
+            localStorage.setItem("token", claveAcceso);
         }
     }, [claveAcceso]);
 
